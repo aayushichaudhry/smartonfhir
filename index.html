@@ -7,13 +7,13 @@
   </head>
   <body>
     <script>
-      // FHIR.oauth2.ready(
-      // //   function(fhirClient) {
-      // //   fhirClient.patient.api.search()
-      // // }
-      // )
-      // .then(client => client.request('Patient'))
-      // .then(console.log).catch(console.error);
+      FHIR.oauth2.ready(
+      //   function(fhirClient) {
+      //   fhirClient.patient.api.search()
+      // }
+      )
+      .then(client => client.request('Patient'))
+      .then(console.log).catch(console.error);
     </script>
     <table>
         <tr>
@@ -27,7 +27,7 @@
             <td>female</td>
         </tr>
         <tr>
-            <td>perso2</td>
+            <td>person2</td>
             <td>27</td>
             <td>male</td>
         </tr>
