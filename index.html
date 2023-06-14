@@ -2,8 +2,19 @@
 <html lang="en">
   <head>
     <title>Trial Patient SMART on FHIR</title>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.0.6/build/fhir-client.js"></script>
+
   </head>
   <body>
+    <script>
+      FHIR.oauth2.ready(
+      //   function(fhirClient) {
+      //   fhirClient.patient.api.search()
+      // }
+      )
+      .then(client => client.request('Patient'))
+      .then(console.log).catch(console.error);
+    </script>
     <table>
         <tr>
             <th>Name</th>
