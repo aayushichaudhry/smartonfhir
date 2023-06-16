@@ -17,7 +17,7 @@
                     var genderx = patient.gender;
                     var p = {gender: {value: genderx}}
                     ret.resolve(p);
-                })
+                });
             } else {
                 onError();
             }
