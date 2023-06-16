@@ -15,7 +15,15 @@
                 $.when(pt).fail(onError);
                 $.when(pt).done(function(patient){
                     var genderx = patient.gender;
-                    var p = {gender: {value: genderx}}
+                    var birthdatex = patient.birthdate;
+                    var firstNamex = patient.name[0].given;
+                    var lastNamex = patient.name[0].family;
+                    var p = {
+                        firstName: {value: firstNamex},
+                        lastName: {value: lastNamex},
+                        birthdate: {value: birthdatex},
+                        gender: {value: genderx}
+                    };
                     ret.resolve(p);
                 });
             } else {
@@ -27,6 +35,9 @@
     };
 
     window.draw = function(p){
+        $('#firstName').html(p.firstName);
+        $('#lastName').html(p.lastName);
+        $('#birth').html(p.birthdate);
         $('#gender').html(p.gender);
     };
 }) (window);
