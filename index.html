@@ -11,6 +11,10 @@
       extractData().then(
         function(p){
           console.log(p);
+        },
+
+        function(){
+          $('#errors').html('<p>Failed to call FHIR Service</p>');
         }
       )
     </script>
