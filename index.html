@@ -4,6 +4,19 @@
     <title>Trial Patient SMART on FHIR</title>
   </head>
   <body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        <tr>
+            <td id = 'gender'></td>
+            <td>16</td>
+            <td>female</td>
+        </tr>
+    </table>
+
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="app.js"></script>
@@ -18,18 +31,6 @@
         }
       )
     </script>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Sex</th>
-        </tr>
-        <tr>
-            <td id = 'gender'></td>
-            <td>16</td>
-            <td>female</td>
-        </tr>
-    </table>
 
   </body>
 </html>
