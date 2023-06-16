@@ -25,4 +25,8 @@
         FHIR.oauth2.ready(onReady, onError);
         return ret.promise();
     };
+
+    window.draw = function(p){
+        $('#gender').html(p.gender);
+    };
 }) (window);
