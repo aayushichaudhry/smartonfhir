@@ -19,10 +19,10 @@
                     var firstNamex = patient.name[0].given;
                     var lastNamex = patient.name[0].family;
                     var p = {
-                        firstName: {value: firstNamex},
-                        lastName: {value: lastNamex},
-                        birthdate: {value: birthdatex},
-                        gender: {value: genderx}
+                        firstName: firstNamex, //{value: firstNamex},
+                        lastName: lastNamex, //{value: lastNamex},
+                        birthdate: birthdatex, //{value: birthdatex},
+                        gender: genderx, //{value: genderx}
                     };
                     ret.resolve(p);
                 });
