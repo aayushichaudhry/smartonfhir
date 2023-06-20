@@ -4,8 +4,8 @@
             p = {}
             p['gender'] = patient['gender'];
             p['birth date'] = patient['birthDate'];
-            p['first name'] = patient['name'][0]['family'];
-            p['last name'] = patient['name'][0]['given'];
+            p['first name'] = patient['name'][0]['family'][0];
+            p['last name'] = patient['name'][0]['given'][0];
             return p;
         }
         function onReady(client) {
@@ -18,9 +18,9 @@
     };
 
     window.draw = function(p){
-        $('#firstName').html(p.firstName);
-        $('#lastName').html(p.lastName);
-        $('#birth').html(p.birthdate);
-        $('#gender').html(p.gender);
+        $('#firstName').html(p['first name']);
+        $('#lastName').html(p['last name']);
+        $('#birth').html(p['birth date']);
+        $('#gender').html(p['gender']);
     };
 }) (window);
