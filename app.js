@@ -1,12 +1,12 @@
 (function(window) {
     window.extractData = function() {
         console.log('script2');
-        var ret = $.Deferred();
+        //var ret = $.Deferred();
 
-        function onError() {
-            console.log('Loading error', arguments);
-            ret.reject();
-        }
+        // function onError() {
+        //     console.log('Loading error', arguments);
+        //     //ret.reject();
+        // }
 
         function onReady(app) {
             if (app.hasOwnProperty('patient')) {
@@ -37,15 +37,18 @@
                         birthdate: birthdatex, //{value: birthdatex},
                         gender: genderx, //{value: genderx}
                     };
-                    ret.resolve(p);
+                    //ret.resolve(p);
                 });
             } else {
                 onError();
             }
         }
-        FHIR.oauth2.ready(onReady, onError);
         console.log('ready');
-        return ret.promise();
+        return FHIR.oauth2.ready().then(onReady).catch(function(e){
+            if (e.status == 401) {
+                console.log('authorization failed')
+            }
+        });
     };
 
     window.draw = function(p){

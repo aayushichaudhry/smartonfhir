@@ -6,14 +6,12 @@
     <title>Trial Patient SMART Application</title>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <script>
-      console.log('authorizing');
       FHIR.oauth2.authorize({
         "client_id": "9bf2ba48-a47c-4548-828c-0989db5524c9", // Cerner
         // "client_id": "4cddc1d4-99d6-4eee-a874-cd574a4e38d4", // OpenEMR
         "scope":  "patient/Patient.read patient/Observation.read launch/patient openid profile online_access"
       }); //iss = https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
       //launch: https://aayushichaudhry.github.io/smartonfhir/launch.html?iss=https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
-      console.log('complete')
     </script>
   </head>
   <body>Loading...</body>
