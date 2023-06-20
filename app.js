@@ -18,6 +18,10 @@
                     var birthdatex = patient.birthdate;
                     var firstNamex = patient.name[0].given;
                     var lastNamex = patient.name[0].family;
+                    console.log(genderx);
+                    console.log(birthdatex);
+                    console.log(firstNamex);
+                    console.log(lastNamex);
                     var p = {
                         firstName: firstNamex, //{value: firstNamex},
                         lastName: lastNamex, //{value: lastNamex},
