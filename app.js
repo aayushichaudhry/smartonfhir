@@ -1,6 +1,5 @@
 (function(window) {
     window.extractData = function() {
-        console.log('script2');
         //var ret = $.Deferred();
 
         // function onError() {
@@ -28,7 +27,7 @@
             return p;
         }
         console.log('ready');
-        return FHIR.oauth2.ready().then(onReady).catch( console.log('authorization failed'));
+        return FHIR.oauth2.ready().then(console.log('authorization success')).catch( console.log('authorization failed'));
     };
 
     window.draw = function(p){
