@@ -10,22 +10,22 @@
         function onReady(client) {
             var patient = client.patient.read();
 
-            var genderx = patient[gender];
-            var birthdatex = patient[birthDate];
-            console.log(patient[name]);
+            // var genderx = patient[gender];
+            // var birthdatex = patient[birthDate];
+            // console.log(patient[name]);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
-            console.log(genderx);
-            console.log(birthdatex);
+            console.log(patient);
+            //console.log(birthdatex);
             //console.log(firstNamex);
             //console.log(lastNamex);
-            var p = {
+            //var p = {
                 //firstName: firstNamex, //{value: firstNamex},
                 //lastName: lastNamex, //{value: lastNamex},
-                birthdate: birthdatex, //{value: birthdatex},
-                gender: genderx, //{value: genderx}
-            };
-            return p;
+                //birthdate: birthdatex, //{value: birthdatex},
+                //gender: genderx, //{value: genderx}
+            //};
+            return patient;
         }
         console.log('ready');
         return FHIR.oauth2.ready().then(onReady).catch(function(e) {
