@@ -6,17 +6,19 @@
         //     console.log('Loading error', arguments);
         //     //ret.reject();
         // }
-
+        function processData(patient) {
+            console.log(patient['gender']);
+            console.log('processed');
+        }
         function onReady(client) {
             var p = {}
-            var patient = client.patient.read().then();
+            var patient = client.patient.read().then(processData);
 
             // var genderx = patient[gender];
             // var birthdatex = patient[birthDate];
             // console.log(patient[name]);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
-            console.log(patient);
             //console.log(birthdatex);
             //console.log(firstNamex);
             //console.log(lastNamex);
