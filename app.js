@@ -8,40 +8,24 @@
         //     //ret.reject();
         // }
 
-        function onReady(app) {
-            if (app.hasOwnProperty('patient')) {
-                var patient = app.patient;
-                var pt = patient.read();
-                var obv = smart.patient.api.fetchAll({
-                    type: 'observation',
-                    query: {
-                        code: {
-                            $or: ['http://loinc.org|8302-2']
-                        }
-                    }
-                })
+        function onReady(client) {
+            var patient = client.patient.read();
 
-                $.when(pt).fail(onError);
-                $.when(pt).done(function(patient){
-                    var genderx = patient[gender];
-                    var birthdatex = patient[birthdate];
-                    var firstNamex = patient[name][0][given];
-                    var lastNamex = patient[name][0][family];
-                    console.log('genderx');
-                    console.log(birthdatex);
-                    console.log(firstNamex);
-                    console.log(lastNamex);
-                    var p = {
-                        firstName: firstNamex, //{value: firstNamex},
-                        lastName: lastNamex, //{value: lastNamex},
-                        birthdate: birthdatex, //{value: birthdatex},
-                        gender: genderx, //{value: genderx}
-                    };
-                    //ret.resolve(p);
-                });
-            } else {
-                onError();
-            }
+            var genderx = patient.gender;
+            var birthdatex = patient.birthdate;
+            var firstNamex = patient.name[0].given;
+            var lastNamex = patient.name[0].family;
+            console.log('genderx');
+            console.log(birthdatex);
+            console.log(firstNamex);
+            console.log(lastNamex);
+            var p = {
+                firstName: firstNamex, //{value: firstNamex},
+                lastName: lastNamex, //{value: lastNamex},
+                birthdate: birthdatex, //{value: birthdatex},
+                gender: genderx, //{value: genderx}
+            };
+            return p;
         }
         console.log('ready');
         return FHIR.oauth2.ready().then(onReady).catch(function(e){
