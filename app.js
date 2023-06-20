@@ -12,6 +12,7 @@
 
             var genderx = patient.gender;
             var birthdatex = patient.birthdate;
+            console.log(patient.name);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
             console.log('genderx');
