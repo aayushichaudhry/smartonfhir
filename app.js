@@ -26,9 +26,8 @@
                 //birthdate: birthdatex, //{value: birthdatex},
                 //gender: genderx, //{value: genderx}
             //};
-            return patient;
+            return Promise.all([patient]);
         }
-        console.log('ready');
         return FHIR.oauth2.ready().then(onReady).catch(function(e) {
             console.log('authorization failed')
             throw e;
