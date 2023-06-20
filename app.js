@@ -27,7 +27,10 @@
             return p;
         }
         console.log('ready');
-        return FHIR.oauth2.ready().then(console.log('authorization success')).catch( console.log('authorization failed'));
+        return FHIR.oauth2.ready().then(onReady).catch(function(e) {
+            console.log('authorization failed')
+            throw e;
+        });
     };
 
     window.draw = function(p){
