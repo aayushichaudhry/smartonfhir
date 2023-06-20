@@ -29,12 +29,15 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="app.js"></script>
     <script>
+      console.log('script1');
       extractData().then(
         function(p){
+          console.log('hi');
           draw(p);
         },
 
         function(){
+          console.log('bye');
           $('#errors').html('<p>Failed to call FHIR Service</p>');
         }
       )
