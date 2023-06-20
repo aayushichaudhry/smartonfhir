@@ -15,7 +15,7 @@
             // console.log(patient[name]);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
-            console.log(patient);
+            console.log(client);
             //console.log(birthdatex);
             //console.log(firstNamex);
             //console.log(lastNamex);
