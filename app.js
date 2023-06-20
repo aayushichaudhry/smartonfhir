@@ -10,12 +10,12 @@
         function onReady(client) {
             var patient = client.patient.read();
 
-            var genderx = patient.gender;
-            var birthdatex = patient.birthdate;
+            var genderx = patient[gender];
+            var birthdatex = patient[birthdate];
             console.log(patient.name);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
-            console.log('genderx');
+            console.log(genderx);
             console.log(birthdatex);
             //console.log(firstNamex);
             //console.log(lastNamex);
