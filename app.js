@@ -7,8 +7,10 @@
         //     //ret.reject();
         // }
         function processData(patient) {
-            console.log(patient['gender']);
-            console.log('processed');
+            p = {}
+            p['gender'] = patient['gender'];
+            p['birth date'] = patient['birthDate']
+            return p;
         }
         function onReady(client) {
             var p = {}
@@ -28,7 +30,7 @@
                 //birthdate: birthdatex, //{value: birthdatex},
                 //gender: genderx, //{value: genderx}
             //};
-            return Promise.all([patient]);
+            return client.patient.read().then(processData);
         }
         return FHIR.oauth2.ready().then(onReady).catch(function(e) {
             console.log('authorization failed')
