@@ -8,14 +8,18 @@
         // }
 
         function onReady(client) {
-            var patient = client.patient.read();
+            var p = {}
+            var patient = client.patient.read().then((pt) =>
+                p['gender'] = pt['gender'],
+                p['birth date'] = pt['birthDate']
+            );
 
             // var genderx = patient[gender];
             // var birthdatex = patient[birthDate];
             // console.log(patient[name]);
             //var firstNamex = patient.name[0].given;
             //var lastNamex = patient.name[0].family;
-            console.log(client);
+            console.log(p);
             //console.log(birthdatex);
             //console.log(firstNamex);
             //console.log(lastNamex);
