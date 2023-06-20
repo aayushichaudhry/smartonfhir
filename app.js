@@ -1,5 +1,6 @@
 (function(window) {
     window.extractData = function() {
+        console.log('script2');
         var ret = $.Deferred();
 
         function onError() {
@@ -43,6 +44,7 @@
             }
         }
         FHIR.oauth2.ready(onReady, onError);
+        console.log('ready');
         return ret.promise();
     };
 
