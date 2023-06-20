@@ -11,13 +11,21 @@
             if (app.hasOwnProperty('patient')) {
                 var patient = app.patient;
                 var pt = patient.read();
+                var obv = smart.patient.api.fetchAll({
+                    type: 'observation',
+                    query: {
+                        code: {
+                            $or: ['http://loinc.org|8302-2']
+                        }
+                    }
+                })
 
                 $.when(pt).fail(onError);
                 $.when(pt).done(function(patient){
-                    var genderx = patient.gender;
-                    var birthdatex = patient.birthdate;
-                    var firstNamex = patient.name[0].given;
-                    var lastNamex = patient.name[0].family;
+                    var genderx = patient[gender];
+                    var birthdatex = patient[birthdate];
+                    var firstNamex = patient[name][0][given];
+                    var lastNamex = patient[name][0][family];
                     console.log(genderx);
                     console.log(birthdatex);
                     console.log(firstNamex);
