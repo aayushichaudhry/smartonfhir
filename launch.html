@@ -7,8 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <script>
       FHIR.oauth2.authorize({
-        //"client_id": "9bf2ba48-a47c-4548-828c-0989db5524c9", // Cerner
-        "client_id": "8f32397b-02aa-4099-98cf-09027ababcea", // EPIC
+        "client_id": "9bf2ba48-a47c-4548-828c-0989db5524c9", // Cerner
+        //"client_id": "8f32397b-02aa-4099-98cf-09027ababcea", // EPIC
         "scope":  "patient/Patient.read patient/Observation.read launch/patient openid profile online_access"
       }); //iss = https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
       //launch: https://aayushichaudhry.github.io/smartonfhir/launch.html?iss=https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
