@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" hidden>
   <head>
     <title>Trial Patient SMART on FHIR</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.5.0.min.css'>
   </head>
   <body>
     <div id="errors"></div>
@@ -28,6 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="app.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
+    <script src='./lib/js/cerner-smart-embeddable-lib-1.5.0.min.js'></script>
     <script>
       //console.log(extractData())
       extractData().then(function(p){
